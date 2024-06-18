@@ -1,32 +1,53 @@
 "use strict";
 
 window.onload = function () {
-  const usersDataTable = document.querySelector("#usersDataTable");
+    const usersDataCards = document.querySelector("#usersDataCards");
 };
 
-function loadUserTableData(users) {
-  for (const user of users) {
-    buildTableRow(user);
-  }
+function loadUserCardData(users) {
+    for (const user of users) {
+        buildUserCard(user);
+    }
 }
 
-function buildTableRow(user) {
-  let row = usersDataTable.insertRow();
-  let cell1 = row.insertCell();
-  cell1.innerText = user.id;
+function buildUserCard(user) {
+    const cardContainer = document.querySelector("#usersDataCards");
+    let card = document.createElement("div");
+    card.classList.add("col-md-4");
 
-  let cell2 = row.insertCell();
-  cell2.innerText = user.title;
+    let cardBody = document.createElement("div");
+    cardBody.classList.add("card", "mb-3");
 
-  let cell3 = row.insertCell();
-  cell3.innerText = user.completed;
+    let cardBodyContent = document.createElement("div");
+    cardBodyContent.classList.add("card-body");
+
+    let cardTitle = document.createElement("h5");
+    cardTitle.classList.add("card-title");
+    cardTitle.innerText = user.title;
+
+    let cardUserId = document.createElement("h6");
+    cardUserId.classList.add("card-subtitle", "mb-2", "text-muted");
+    cardUserId.innerText = `ID: ${user.id}`;
+
+    let cardCompleted = document.createElement("p");
+    cardCompleted.classList.add("card-text");
+    cardCompleted.innerText = `Completed: ${user.completed}`;
+
+    cardBodyContent.appendChild(cardTitle);
+    cardBodyContent.appendChild(cardUserId);
+    cardBodyContent.appendChild(cardCompleted);
+    cardBody.appendChild(cardBodyContent);
+    card.appendChild(cardBody);
+
+    cardContainer.appendChild(card);
 }
 
 function fetchAndDisplayUserData() {
-  fetch("https://jsonplaceholder.typicode.com/todos")
-    .then((response) => response.json())
-    .then((users) => {
-      loadUserTableData(users);
-    });
+    fetch("https://jsonplaceholder.typicode.com/todos")
+        .then((response) => response.json())
+        .then((users) => {
+            loadUserCardData(users);
+        });
 }
+
 fetchAndDisplayUserData();
