@@ -4,13 +4,37 @@
 <head>
   <title>Title</title>
   <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
+
+<style>
+  #createButton {
+    position:fixed;
+    bottom: 5rem;
+    right: 5rem;
+  }
+
+  @media screen and (max-width: 1200px) and (min-width:990px) {
+    #createButton { right: 2rem}
+  }
+
+  @media screen and (min-width: 1400px){
+    #createButton {right: 2rem}
+  }
+
+  @media screen and (max-width: 720px) and (min-width: 500px){
+    #createButton {
+      position:fixed;
+      right: 2rem;
+      z-index: 10;
+    }
+  }
+</style>
 
 <body>
   <header>
@@ -69,7 +93,7 @@
             </li>
           </ul>
           <form class="d-flex my-2">
-            <input class="form-control me-sm-2" type="text" placeholder="Search" />
+            <input class="form-control me-sm-2" type="text" placeholder="Search" >
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
               Search
             </button>
@@ -79,17 +103,23 @@
     </nav>
   </header>
 
+  <a href="new-todo.html" id="createButton">
+    <svg xmlns="http://www.w3.org/2000/svg" width="85" height="85" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+    </svg>
+  </a>
+
   <main class="my-4 container bg-light">
-    <div class="d-flex justify-content-around p-4">
-      <h1>View All</h1>
-      <a href="new-todo.html" class="btn btn-primary align-content-center" id="createButton">Create</a>
+    <div>
+      <h1 class="text-center">All Tasks</h1>
+      
     </div>
     <hr>
 
-    <div id="eachCard" class="row">
+    <div id="eachCard" class="row d-flex justify-content-center">
       
-        </div>
-      </div>
+        
+      
     </div>
   </main>
 
