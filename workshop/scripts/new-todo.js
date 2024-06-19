@@ -12,7 +12,7 @@ window.onload = function () {
 function getCategory() {
     console.log("getCategory was called");
 
-    fetch("http://localhost:3000/categories")
+    fetch("http://localhost:8083/api/categories")
         .then(response => response.json())
         .then(categories => {
 
