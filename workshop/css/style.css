@@ -15,27 +15,6 @@
 
     /* ONLY USED IN VIEW-ALL PAGE */
     #createButton {
-        position: fixed;
+        position: sticky;
         bottom: 5rem;
-        right: 5rem;
-    }
-
-    @media screen and (max-width: 1200px) and (min-width:990px) {
-        #createButton {
-            right: 2rem
-        }
-    }
-
-    @media screen and (min-width: 1400px) {
-        #createButton {
-            right: 2rem
-        }
-    }
-
-    @media screen and (max-width: 720px) and (min-width: 500px) {
-        #createButton {
-            position: fixed;
-            right: 2rem;
-            z-index: 10;
-        }
     }
