@@ -5,4 +5,4 @@ GET http://localhost:8083/api/todos
 GET http://localhost:8083/api/users
 
 ###GET USER 1'S TODO LIST
-GET http://localhost:8083/api/todos/1
+GET http://localhost:8083/api/todos/users/1

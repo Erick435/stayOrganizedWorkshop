@@ -1,0 +1,12 @@
+POST http://localhost:8083/api/todos
+Content-Type: application/json
+
+{
+    
+    "userid": 5,
+    "category": "Personal Task",
+    "description": "Buy milk for tomorrow's breakfast",
+    "deadline": "2024-6-18",
+    "priority": "High",
+    "complete": "false"
+}
