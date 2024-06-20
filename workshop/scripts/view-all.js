@@ -22,7 +22,7 @@ function getAllUsers() {
         .then(users => {
             for (let user of users) {
                 let option = new Option(user.name, user.id)
-
+                option.classList.add("text-center")
                 userSelect.appendChild(option);
             }
         })
